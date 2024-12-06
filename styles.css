@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+h1{
+    margin: 1em;
+    font-size: xxx-large;
+}
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box{
+    width: 75px;
+    height: 75px;
+    border :1px solid black;
+    background-color: rgb(212, 250, 76);
+    font-size: 3em;
+    text-align: center;
+    line-height: 75px; /* Cela représente l'espace entre les lignes */
+    margin: 5px;
+    animation: appear 1s; 
+    border-radius: 6px;
+}
+
+.box-cliked{
+    background-color: #ccc;
+    color: #aaa;
+}
+.box-valid{
+    background-color: grey;
+    color:white;
+}
+
+@keyframes appear { /* Pour faire l'animation de appear*/
+    from {transform: scale(0) rotate(180deg)}
+    to {transform: scale(1) rotate(0deg)}
+} 
