@@ -12,34 +12,56 @@ h1{
     margin: 1em;
     font-size: xxx-large;
 }
+
+/***********************************Jeu 1***********************************/
+#ordreChiffre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 #board {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 80%;
 }
 
 .box{
     width: 75px;
     height: 75px;
     border :1px solid black;
-    background-color: rgb(212, 250, 76);
+    background-color: rgb(85,222,237);
     font-size: 3em;
     text-align: center;
     line-height: 75px; /* Cela représente l'espace entre les lignes */
     margin: 5px;
     animation: appear 1s; 
     border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.8s, color 0.8s, transform 0.8s; /* pour que la transition du fond, du texte et de la totalité soit fait en 0.8s */
+}
+.box:hover{
+    transform: scale(1.2);
 }
 
-.box-cliked{
-    background-color: #ccc;
-    color: #aaa;
-}
 .box-valid{
-    background-color: grey;
+    background-color: rgb(49, 151, 8);
     color:white;
+    transform: scale(0.8);
 }
-
+.box.error {
+    color:white;
+    background-color: rgb(237,122,85);
+}
+.box.success {
+    color:white;
+    background-color: rgb(85,237,150);
+}
+.box.notice {
+    color:white;
+    background-color: rgb(237,218,85);
+    cursor: not-allowed;
+}
 @keyframes appear { /* Pour faire l'animation de appear*/
     from {transform: scale(0) rotate(180deg)}
     to {transform: scale(1) rotate(0deg)}
