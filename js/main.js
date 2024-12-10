@@ -42,11 +42,11 @@ const board = document.querySelector("#board"); // on cree la constante board qu
 let nbNombre = prompt("Entrer le nombre maximum à rechercher: ");
 let dificulte = prompt("Voulez-vous la version difficile? (non ou oui)");
 // let temps_jeu = [];
-let sec=0; 
-let min=0;
+let sec= 0; 
+let min= 0;
 
 let timer = setInterval(function(){
-    document.getElementById('timer').innerHTML= "Timer: " + min + " : " + sec; //affiche les minutes et le secondes
+    document.getElementById('timer').innerHTML= "Timer: " + Number(min) + " min   " + Number(sec) + " sec"; //affiche les minutes et le secondes
     if (sec>=60) // pour passer les 60 secondes en minute
     {
         min++;
@@ -99,7 +99,7 @@ if (nbNombre>1)
                 }else 
                 {
                     // console.log("Case déjà cliqué !");
-                    showReaction("notice", '#timer');
+                    showReaction("notice", newBox);
                 }
             })
         // document.getElementById('tableau').innerHTML = temps_jeu;
