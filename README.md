@@ -17,6 +17,6 @@ une application simple permettant de trier des nombres saisis par l'utilisateur 
 * Ajout d'interaction si une erreur ou une case déjà cocher.
  
 **Objectifs Pédagogiques**
-* Apprendre les bases du** DOM** avec JavaScript : ajout, modification et manipulation d'éléments HTML à partir de JavaScript
+* Apprendre les bases du **DOM** avec JavaScript : ajout, modification et manipulation d'éléments HTML à partir de JavaScript
 * Améliorer l'intégration JavaScript dans HTML : en suivant des pratiques modernes et en respectant la séparation des responsabilités.
 * Renforcer les connaissances en HTML et CSS : mise en forme d'une interface utilisateur fonctionnelle
