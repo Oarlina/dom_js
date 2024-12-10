@@ -35,19 +35,34 @@ function showReaction (type, clickedBox){
     }
 }
 
-
 const box = document.createElement("div"); // la constante box instancie un nouvel objet htmlElement qui est représenter par div. 
 box.classList.add("box"); // on rajoute la class box a classList
 
 const board = document.querySelector("#board"); // on cree la constante board qui recupere la id board
 let nbNombre = prompt("Entrer le nombre maximum à rechercher: ");
 let dificulte = prompt("Voulez-vous la version difficile? (non ou oui)");
+// let temps_jeu = [];
+let sec=0; 
+let min=0;
+
+let timer = setInterval(function(){
+    document.getElementById('timer').innerHTML= "Timer: " + min + " : " + sec; //affiche les minutes et le secondes
+    if (sec>=60) // pour passer les 60 secondes en minute
+    {
+        min++;
+        sec-=60;
+    }
+    sec++;
+}, 1000);
+    
+
 if (nbNombre>1)
 {
-
-    let nb = 1;
+    let nb=1;
+    timer; // pour que le timer commence quand le jeu est charger
     for (let i = 1; i <= nbNombre; i++)
         {
+            timer;
             const newBox = box.cloneNode();
             newBox.innerText = i; // rajoute du texte "1" a la constante box
             board.appendChild(newBox); // rajoute un element a la fin de la constant box
@@ -64,6 +79,8 @@ if (nbNombre>1)
                         board.querySelectorAll(".box").forEach(function(box){
                             showReaction("success",box);
                         }); // remet toute les cases au depart
+                        clearInterval(timer); // pour stopper le timer quand le jeu est gagner
+                        // temps_jeu.push(timer);
                     }
                     if (dificulte == "oui")
                     {
@@ -82,9 +99,10 @@ if (nbNombre>1)
                 }else 
                 {
                     // console.log("Case déjà cliqué !");
-                    showReaction("notice", newBox);
+                    showReaction("notice", '#timer');
                 }
             })
+        // document.getElementById('tableau').innerHTML = temps_jeu;
     }
     
     shuffleChildren(board); // pour optimiser le code afin de mélanger les nombres

@@ -18,12 +18,13 @@ h1{
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 #board {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: 100%;
 }
 
 .box{
@@ -61,6 +62,9 @@ h1{
     color:white;
     background-color: rgb(237,218,85);
     cursor: not-allowed;
+}
+#timer{
+    height:3em;
 }
 @keyframes appear { /* Pour faire l'animation de appear*/
     from {transform: scale(0) rotate(180deg)}
